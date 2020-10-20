@@ -1,0 +1,35 @@
+<%- include("header.ejs") %>
+
+<script>
+var sp1 = 0;
+var sp2 = 0;
+
+function p1 () {
+	sp1 += 1;
+	document.querySelector("#board").textContent = sp1 + " - " + sp2;
+}
+
+function p2 () {
+	var a;
+	navigator.geolocation.getCurrentPosition(function(position){document.querySelector("#board").textContent = position.coords.latitude;});
+	sp2 += 1;
+	console.log(a);
+	/*document.querySelector("#board").textContent = a.coords;*/
+}
+</script>
+
+
+<h1>Welcome to Yelpcamp ! </h1>
+
+<br>
+<a href="/campgrounds">View all campgrounds</a>
+
+<br>
+
+<h1 id="board">0 - 0</h1>
+<button onclick="p1()">Player 1</button>
+<button onclick="p2()">Player 1</button>
+
+
+
+<%- include("footer.ejs") %>
